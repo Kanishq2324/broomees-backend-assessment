@@ -62,49 +62,26 @@ DELETE_REPUTATION_THRESHOLD=0
 npm run start:dev
 
 
-Base URL:
-
-http://localhost:3000
-
-## 🔐 Authentication (API Token)
-Issue Token
-POST /api/auth/token
-
-
-Body
-
-{
-  "userId": "<USER_ID>"
-}
-
-
-Use it in request headers:
-
-Authorization: Bearer <TOKEN>
-
-
-✅ Only DELETE /api/users/:id is guarded.
-
-📚 API References
+## 📚 API References
 
 👤 Users
--GET	/api/users	List users (paginated)
--GET	/api/users/:id	Get user
--POST	/api/users	Create user
--PUT	/api/users/:id	Update user
--DELETE	/api/users/:id	Delete user (guarded)
+- GET	/api/users	List users (paginated)
+- GET	/api/users/:id	Get user
+- POST	/api/users	Create user
+- PUT	/api/users/:id	Update user
+- DELETE	/api/users/:id	Delete user (guarded)
 
 
 🤝 Relationships
--POST	/api/users/:id/relationships	Create relationship
--DELETE	/api/users/:id/relationships	Remove relationship
+- POST	/api/users/:id/relationships	Create relationship
+- DELETE	/api/users/:id/relationships	Remove relationship
 
 🎯 Hobbies
--POST	/api/users/:id/hobbies	Add hobby
--DELETE	/api/users/:id/hobbies	Remove hobby
+- POST	/api/users/:id/hobbies	Add hobby
+- DELETE	/api/users/:id/hobbies	Remove hobby
 
 📊 Metrics
--GET	/api/metrics/reputation	System-wide reputation stats
+- GET	/api/metrics/reputation	System-wide reputation stats
 
 
 --- Kanishq 
