@@ -84,4 +84,15 @@ npm run start:dev
 - GET	/api/metrics/reputation	System-wide reputation stats
 
 
+## .env example
+MONGODB_URL= LINK
+
+
+DELETE_REPUTATION_THRESHOLD= <>
+
+TOKEN_HASH_ROUNDS=<>
+
+TOKEN_EXPIRY_MINUTES=<>
+
+
 --- Kanishq 
