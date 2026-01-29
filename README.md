@@ -66,7 +66,7 @@ Base URL:
 
 http://localhost:3000
 
-🔐 Authentication (API Token)
+## 🔐 Authentication (API Token)
 Issue Token
 POST /api/auth/token
 
@@ -88,22 +88,23 @@ Authorization: Bearer <TOKEN>
 📚 API References
 
 👤 Users
-GET	/api/users	List users (paginated)
-GET	/api/users/:id	Get user
-POST	/api/users	Create user
-PUT	/api/users/:id	Update user
-DELETE	/api/users/:id	Delete user (guarded)
+-GET	/api/users	List users (paginated)
+-GET	/api/users/:id	Get user
+-POST	/api/users	Create user
+-PUT	/api/users/:id	Update user
+-DELETE	/api/users/:id	Delete user (guarded)
+
 
 🤝 Relationships
-POST	/api/users/:id/relationships	Create relationship
-DELETE	/api/users/:id/relationships	Remove relationship
+-POST	/api/users/:id/relationships	Create relationship
+-DELETE	/api/users/:id/relationships	Remove relationship
 
 🎯 Hobbies
-POST	/api/users/:id/hobbies	Add hobby
-DELETE	/api/users/:id/hobbies	Remove hobby
+-POST	/api/users/:id/hobbies	Add hobby
+-DELETE	/api/users/:id/hobbies	Remove hobby
 
 📊 Metrics
-GET	/api/metrics/reputation	System-wide reputation stats
+-GET	/api/metrics/reputation	System-wide reputation stats
 
 
 --- Kanishq 
