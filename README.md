@@ -2,201 +2,108 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
- 
-## Description
+# 🧩 Broomees Backend Assignment (NestJS + MongoDB)
 
-🧩 Broomees Backend Assignment — NestJS + MongoDB
+Backend REST API implementation for the **Broomees** technical assessment, built using **NestJS** and **MongoDB**.  
+This project demonstrates API design, validation (DTOs), token-based auth, business rules (409), and relational features like friendships and hobbies.
 
-Backend API implementation for the Broomees technical assessment, built using NestJS and MongoDB.
+---
 
-This project demonstrates REST API design, authentication via API tokens, business-rule enforcement, MongoDB transactions, DTO validation, and system-wide metrics.
+## ✨ Highlights
 
-🚀 Features Implemented
+- ✅ User CRUD (Create, Read, Update, Delete)
+- ✅ Token-based authentication (`Bearer <token>`) for guarded routes
+- ✅ Delete-user business rules with correct **409 Conflict**
+- ✅ Relationships (add/remove)
+- ✅ Hobbies (add/remove)
+- ✅ Metrics endpoint for reputation system stats
+- ✅ DTO validation using `class-validator`
+- ✅ MongoDB transactions for relationship consistency (where applicable)
 
-User CRUD APIs
+---
 
-API token authentication
+## 🧰 Tech Stack
 
-Guarded delete endpoint
+- **NestJS**
+- **TypeScript**
+- **MongoDB + Mongoose**
+- `bcrypt`
+- `class-validator`, `class-transformer`
+- `dotenv`
 
-User relationships (add/remove)
+---
 
-User hobbies (add/remove)
+## 📦 Installation
 
-Reputation metrics endpoint
+### 1) Clone the repository
 
-Business rules with correct HTTP status codes
-
-MongoDB transactions
-
-DTO validation using class-validator
-
-Pagination for list endpoints
-
-Environment-based configuration
-
-🛠 Tech Stack
-
-NestJS
-
-TypeScript
-
-MongoDB + Mongoose
-
-bcrypt
-
-class-validator
-
-dotenv
-
-⚙️ Setup Instructions
-1️⃣ Clone Repository
 git clone <YOUR_REPO_URL>
 cd broomees-backend
 
-2️⃣ Install Dependencies
+### 2) Install
 npm install
 
-3️⃣ Environment Setup
+### 3) Environment
 
-Create a .env file from .env.example.
+Create .env from .env.example:
 
-Example:
+cp .env.example .env
+
+
+📄 .env.example
 
 PORT=3000
-
 MONGO_URI=mongodb://localhost:27017/broomees-backend
 
 TOKEN_EXPIRY_MINUTES=60
-
 DELETE_REPUTATION_THRESHOLD=0
 
-4️⃣ Run Server
+### 4) Run
 npm run start:dev
 
 
-Server runs at:
+Base URL:
 
 http://localhost:3000
 
-🔐 Authentication
-
-Issue API Token:
-
+🔐 Authentication (API Token)
+Issue Token
 POST /api/auth/token
 
 
-Use returned token in requests:
-
-Authorization: Bearer <TOKEN>
-
-
-Only guarded endpoints require a token (e.g. DELETE user).
-
-📚 API Endpoints
-🔹 Auth
-Method	Endpoint
-POST	/api/auth/token
-🔹 Users
-Method	Endpoint
-GET	/api/users
-GET	/api/users/:id
-POST	/api/users
-PUT	/api/users/:id
-DELETE	/api/users/:id (guarded)
-🔹 Relationships
-Method	Endpoint
-POST	/api/users/:id/relationships
-DELETE	/api/users/:id/relationships
-🔹 Hobbies
-Method	Endpoint
-POST	/api/users/:id/hobbies
-DELETE	/api/users/:id/hobbies
-🔹 Metrics
-Method	Endpoint
-GET	/api/metrics/reputation
-📖 API Usage Examples
-➕ Create User
-POST /api/users
-
-{
-  "username": "kanishq",
-  "age": 22
-}
-
-🔐 Issue Token
-POST /api/auth/token
+Body
 
 {
   "userId": "<USER_ID>"
 }
 
-🤝 Add Relationship
-POST /api/users/<USER_ID>/relationships
 
-{
-  "friendId": "<FRIEND_ID>"
-}
+Use it in request headers:
 
-🎯 Add Hobby
-POST /api/users/<USER_ID>/hobbies
+Authorization: Bearer <TOKEN>
 
-{
-  "name": "Cricket"
-}
 
-⚠️ Error Handling
+✅ Only DELETE /api/users/:id is guarded.
 
-The API returns correct HTTP codes:
+📚 API References
 
-Scenario	Status
-Validation error	400
-Unauthorized	401
-Resource not found	404
-Conflict (business rules)	409
-Rate limit exceeded	429 (planned)
-🧠 Design Notes
+👤 Users
+GET	/api/users	List users (paginated)
+GET	/api/users/:id	Get user
+POST	/api/users	Create user
+PUT	/api/users/:id	Update user
+DELETE	/api/users/:id	Delete user (guarded)
 
-Delete user is guarded using API token authentication.
+🤝 Relationships
+POST	/api/users/:id/relationships	Create relationship
+DELETE	/api/users/:id/relationships	Remove relationship
 
-User deletion is blocked if:
+🎯 Hobbies
+POST	/api/users/:id/hobbies	Add hobby
+DELETE	/api/users/:id/hobbies	Remove hobby
 
-reputationScore is above configured threshold
+📊 Metrics
+GET	/api/metrics/reputation	System-wide reputation stats
 
-active relationships exist
 
-MongoDB transactions are used to maintain relationship consistency.
-
-DTOs handle request validation.
-
-Metrics endpoint uses Mongo aggregation.
-
-⚡ Limitations / Future Improvements
-
-Rate limiting not implemented due to time constraints.
-
-Reputation calculation is minimal and can be extended.
-
-Redis-based caching for throttling.
-
-Swagger API documentation.
-
-Background jobs for reputation recalculation.
-
-🧪 Testing
-
-All endpoints were tested using Postman.
-
-Recommended flow:
-
-1️⃣ Create users
-2️⃣ Issue token
-3️⃣ Create relationships
-4️⃣ Add hobbies
-5️⃣ Test delete rules
-6️⃣ Fetch metrics
-
-📌 Author
-
-Kanishq
-Backend Developer Candidate
+--- Kanishq 
