@@ -9,7 +9,6 @@ export async function createServer() {
 
   const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
   app.useGlobalPipes(new ValidationPipe());
-  app.setGlobalPrefix('api');
   app.enableCors();
 
   await app.init();
