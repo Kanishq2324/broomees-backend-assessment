@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } fro
 import { UsersService } from './users.service';
 import { CreateUserDto } from './userDto/createUserDto';
 import { ListUsersDto } from './userDto/list-users.dto';
-import { IdParamDto } from 'src/common/reusable_dto/IdParam.dto';
+import { IdParamDto } from '../common/reusable_dto/IdParam.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { UpdateUserDto } from './userDto/updateUser.dto';
 

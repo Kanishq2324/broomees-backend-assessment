@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Param, Post } from '@nestjs/common';
 import { RelationshipsService } from './relationships.service';
-import { IdParamDto } from 'src/common/reusable_dto/IdParam.dto';
+import { IdParamDto } from '../common/reusable_dto/IdParam.dto';
 import { CreateRelationshipDto } from './relationshipDto/createRel.dto';
 import { DeleteRelationshipDto } from './relationshipDto/deleteRel.dto';
 

@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Param, Post } from '@nestjs/common';
 import { HobbiesService } from './hobbies.service';
-import { IdParamDto } from 'src/common/reusable_dto/IdParam.dto';
+import { IdParamDto } from '../common/reusable_dto/IdParam.dto';
 import { AddHobbyDto } from './hobbyDto/addHobby.dto';
 import { RemoveHobbyDto } from './hobbyDto/removeHobby.dto';
 
