@@ -1,4 +1,4 @@
-import { createServer } from '../src/main';
+import { createServer } from './main';
 
 let server: any;
 
